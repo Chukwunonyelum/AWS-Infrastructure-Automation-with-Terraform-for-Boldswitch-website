@@ -46,3 +46,39 @@ variable "private_data_subnet_az2_cidr" {
     description = "private_data_subnet_az2_cidr_block"
     type        = string 
 }
+
+
+#security group variable
+variable "ssh_location" {
+    default     = "0.0.0.0/0"
+    description = "the ip address that can ssh into ec2 instance"
+    type        = string 
+}
+
+
+#rds variables
+variable "database_snapshot_identifier" {
+    default     = "arn:aws:rds:us-east-1:054037104385:snapshot:ikenga-snapshot"
+    description = "database snapshot identifier arn"
+    type        = string 
+}
+
+
+variable "database_instance_class" {
+    default     = "db.t3.micro"
+    description = "the database instance type"
+    type        = string 
+}
+
+variable "database_instance_identifier" {
+    default     = "ikenga"
+    description = "the database instance identifier"
+    type        = string 
+}
+
+
+variable "multi_az_deployment" {
+    default     = false
+    description = "create a standby db instance"
+    type        = bool 
+}
